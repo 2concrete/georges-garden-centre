@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
     <title>Georges Garden Center | Home</title>
+
     <!--
   Template Basic
   
@@ -20,12 +21,10 @@
     <link rel="stylesheet" href="/css/custom.css" />
 
     <link rel="stylesheet" href="/css/components/header-nav.css" />
-    <link rel="stylesheet" href="/css/components/carousel.css" />
-    <link rel="stylesheet" href="/css/components/gallery-card-addon.css" />
-    <link rel="stylesheet" href="/css/components/gallery-product-addon.css" />
-    <link rel="stylesheet" href="/css/components/gallery.css" />
-    <link rel="stylesheet" href="/css/components/embed.css" />
+    <link rel="stylesheet" href="/css/components/form.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
+
   <body>
     <a href="#main" class="skip-link">Skip to main content</a>
     <header class="site-header drawer-right">
@@ -57,7 +56,75 @@
     </header>
 
     <main id="main">
-      <br />
+      <div class="auto-grid container">
+        <section class="truncate container section">
+          <header class="section-header stack">
+            <span class="section-header__eyebrow">24/7 online support</span>
+            <h1 class="section-header__title">Contact Us</h1>
+          </header>
+          <ul class="list-none stack">
+            <li style="display: flex; justify-items: center; gap: 5px">
+              <i data-feather="phone"></i> 0431 456 452
+            </li>
+            <li style="display: flex; justify-items: center; gap: 5px">
+              <i data-feather="mail"></i> help@georgesgardencentre.com
+            </li>
+            <li style="display: flex; justify-items: center; gap: 5px">
+              <i data-feather="map-pin"></i> 54 George St, Georgeville
+            </li>
+          </ul>
+        </section>
+        <section class="col-span-2 container section">
+          <form class="form card stack" novalidate>
+            <div class="form__field stack">
+              <label class="form__label" for="name">Full name</label>
+              <input
+                class="form__input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Jane Smith"
+              />
+            </div>
+            <div class="form__field stack">
+              <label class="form__label" for="email">Email address</label>
+              <input
+                class="form__input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="jane@example.com"
+              />
+              <p class="form__help">
+                We'll only use this to respond to your enquiry.
+              </p>
+            </div>
+            <div class="form__field stack">
+              <label class="form__label" for="topic">Topic</label>
+              <select class="form__select" id="topic" name="topic">
+                <option value="">Please choose</option>
+                <option>Project enquiry</option>
+                <option>General feedback</option>
+              </select>
+            </div>
+            <div class="form__field stack">
+              <label class="form__label" for="message">Message</label>
+              <textarea
+                class="form__textarea"
+                id="message"
+                name="message"
+                placeholder="Message..."
+              ></textarea>
+            </div>
+            <div class="cluster" aria-label="Form actions">
+              <button class="btn btn--primary" type="submit">
+                Send message
+              </button>
+              <button class="btn btn--secondary" type="reset">Reset</button>
+            </div>
+          </form>
+        </section>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -74,5 +141,8 @@
         </p>
       </div>
     </footer>
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>
