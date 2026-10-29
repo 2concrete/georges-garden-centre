@@ -18,7 +18,6 @@
   file declares them. Specialized modules stay in css/components/.
 */
 
-
 /* =====================
    Tokens and theme defaults
    ===================== */
@@ -28,7 +27,11 @@
     --color-bg: #020617;
     --color-text: #e5e7eb;
     --color-accent-seed: #8b5cf6;
-    --color-accent-default: color-mix(in oklab, var(--color-accent-seed) 82%, var(--color-bg) 18%);
+    --color-accent-default: color-mix(
+      in oklab,
+      var(--color-accent-seed) 82%,
+      var(--color-bg) 18%
+    );
     --color-accent: var(--color-accent-default);
     --color-on-accent: var(--color-text);
     /* --color-accent, mixed toward the page background, reads well as
@@ -63,13 +66,21 @@
       color-mix(in oklab, var(--color-accent-seed) 75%, white 25%)
     );
     /* Semantic status colours - override in custom.css if needed */
-    --color-error:   #fca5a5;
+    --color-error: #fca5a5;
     --color-success: #86efac;
     --color-warning: #fde68a;
-    --color-info:    #93c5fd;
+    --color-info: #93c5fd;
 
-    --color-surface: color-mix(in oklab, var(--color-bg) 90%, var(--color-text) 10%);
-    --color-elevated: color-mix(in oklab, var(--color-bg) 82%, var(--color-text) 18%);
+    --color-surface: color-mix(
+      in oklab,
+      var(--color-bg) 90%,
+      var(--color-text) 10%
+    );
+    --color-elevated: color-mix(
+      in oklab,
+      var(--color-bg) 82%,
+      var(--color-text) 18%
+    );
     /* 80%, not the original 65% - measured against the two darkest
        surfaces this is actually used as text on: --color-elevated
        (footers, badges) and .media-gallery__caption's own darker
@@ -80,12 +91,25 @@
        80% clears BOTH backgrounds on the default palette and every
        customised site theme (4.86 the closest margin, 9.05 the most). */
     --color-muted: color-mix(in oklab, var(--color-text) 80%, var(--color-bg));
-    --color-border: color-mix(in oklab, var(--color-surface) 70%, var(--color-text) 18%);
-    --color-border-strong: color-mix(in oklab, var(--color-surface) 45%, var(--color-text) 35%);
-    --color-hover: color-mix(in oklab, var(--color-bg) 85%, var(--color-accent));
+    --color-border: color-mix(
+      in oklab,
+      var(--color-surface) 70%,
+      var(--color-text) 18%
+    );
+    --color-border-strong: color-mix(
+      in oklab,
+      var(--color-surface) 45%,
+      var(--color-text) 35%
+    );
+    --color-hover: color-mix(
+      in oklab,
+      var(--color-bg) 85%,
+      var(--color-accent)
+    );
     --color-backdrop: rgb(0 0 0 / 0.85);
 
-    --shadow-elevated: 0 12px 36px color-mix(in oklab, var(--color-bg) 50%, transparent);
+    --shadow-elevated: 0 12px 36px
+      color-mix(in oklab, var(--color-bg) 50%, transparent);
 
     --container-max: 1200px;
     --content-max: 70ch;
@@ -152,7 +176,6 @@
     --transition-base: 0.3s ease;
   }
 }
-
 
 @layer layout {
   body {
@@ -238,7 +261,10 @@
 
   @media (min-width: 1024px) {
     .grid {
-      grid-template-columns: var(--col-layout-lg, var(--col-layout-md, var(--col-layout)));
+      grid-template-columns: var(
+        --col-layout-lg,
+        var(--col-layout-md, var(--col-layout))
+      );
     }
   }
 
@@ -276,7 +302,6 @@
     --min: 16rem;
   }
 }
-
 
 @layer components {
   .skip-link {
@@ -322,22 +347,46 @@
   .btn--primary {
     background: var(--color-accent);
     color: var(--color-on-accent);
-    border-color: color-mix(in oklab, var(--color-accent) 62%, var(--color-text) 38%);
+    border-color: color-mix(
+      in oklab,
+      var(--color-accent) 62%,
+      var(--color-text) 38%
+    );
   }
 
   .btn--primary:hover {
-    background: color-mix(in oklab, var(--color-accent) 88%, var(--color-text) 12%);
-    border-color: color-mix(in oklab, var(--color-accent) 54%, var(--color-text) 46%);
+    background: color-mix(
+      in oklab,
+      var(--color-accent) 88%,
+      var(--color-text) 12%
+    );
+    border-color: color-mix(
+      in oklab,
+      var(--color-accent) 54%,
+      var(--color-text) 46%
+    );
   }
 
   .btn--secondary {
-    background: color-mix(in oklab, var(--color-surface) 86%, var(--color-text) 14%);
+    background: color-mix(
+      in oklab,
+      var(--color-surface) 86%,
+      var(--color-text) 14%
+    );
     color: var(--color-text);
-    border-color: color-mix(in oklab, var(--color-surface) 55%, var(--color-text) 45%);
+    border-color: color-mix(
+      in oklab,
+      var(--color-surface) 55%,
+      var(--color-text) 45%
+    );
   }
 
   .btn--secondary:hover {
-    background: color-mix(in oklab, var(--color-surface) 78%, var(--color-text) 22%);
+    background: color-mix(
+      in oklab,
+      var(--color-surface) 78%,
+      var(--color-text) 22%
+    );
   }
 
   /* .card, .card__title, and .card p - see css/components/card.css for
@@ -491,7 +540,6 @@
   }
 }
 
-
 /*
   Small, atomic, single-property helper classes - deliberately placed
   in utilities rather than layout. The layer order (see the top of
@@ -503,14 +551,22 @@
   merged "utilities" layer regardless of which file declares them.
 */
 @layer utilities {
-  .text-muted { color: var(--color-muted); }
-  .text-error { color: var(--color-error); }
-  .text-accent { color: var(--color-accent-text); }
+  .text-muted {
+    color: var(--color-muted);
+  }
+  .text-error {
+    color: var(--color-error);
+  }
+  .text-accent {
+    color: var(--color-accent-text);
+  }
 
   /* Resets color back to the normal body tone - for un-muting one
      word or phrase inside an otherwise .text-muted parent, e.g. a
      result count that should read as normal text in a muted sentence. */
-  .text-normal { color: var(--color-text); }
+  .text-normal {
+    color: var(--color-text);
+  }
 
   /* Two size helpers, not a full set - anything else smaller or
      larger than body size is a component's own font-size decision,
@@ -518,21 +574,41 @@
      notch below body size, wherever it turns up (tables, cards, meta
      rows, form hints). Pairs with .text-muted for that pattern:
        <p class="text-muted text-sm">Last updated 3 hours ago</p> */
-  .text-sm { font-size: 0.9rem; }
-  .text-xs { font-size: 0.75rem; }
+  .text-sm {
+    font-size: 0.9rem;
+  }
+  .text-xs {
+    font-size: 0.75rem;
+  }
 
-  .text-center { text-align: center; }
-  .no-underline { text-decoration: none; }
-  .items-center { align-items: center; }
-  .items-start { align-items: start; }
-  .items-end { align-items: flex-end; }
-  .justify-center { justify-content: center; }
-  .flex-1 { flex: 1; }
+  .text-center {
+    text-align: center;
+  }
+  .no-underline {
+    text-decoration: none;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: start;
+  }
+  .items-end {
+    align-items: flex-end;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .flex-1 {
+    flex: 1;
+  }
 
   /* A one-off grid-child placement hook - most .grid usages don't need
      child-level spanning, so this stays a single atomic utility rather
      than a general --col-span custom-property API. */
-  .col-span-2 { grid-column: span 2; }
+  .col-span-2 {
+    grid-column: span 2;
+  }
 
   /* A <hr> reset to a plain 1px rule - the browser default <hr> has a
      3D-inset border box that never matches this framework's flat look. */
@@ -590,7 +666,9 @@
     margin-inline-start: var(--space-4);
   }
 
-  .text-nowrap { white-space: nowrap; }
+  .text-nowrap {
+    white-space: nowrap;
+  }
 
   /* Single-line truncation with an ellipsis - needs a bounded or
      shrinkable width on the element to have any visible effect. */
