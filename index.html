@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Georges Garden Center | Home</title>
+    <!--
+  Template Basic
+  
+  This HTML file uses:
+  - ../css/reset.css
+  - ../css/core.css
+  - ../css/components/header-nav.css
+  - ../css/components/hero.css
+  - ../css/custom.css
+  -->
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/core.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+    <link rel="stylesheet" href="/css/components/header-nav.css" />
+    <link rel="stylesheet" href="/css/components/carousel.css" />
+    <link rel="stylesheet" href="/css/components/gallery-card-addon.css" />
+    <link rel="stylesheet" href="/css/components/gallery-product-addon.css" />
+    <link rel="stylesheet" href="/css/components/gallery.css" />
+    <link rel="stylesheet" href="/css/components/embed.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <header class="site-header drawer-right">
+      <div class="site-header__inner container">
+        <button
+          type="button"
+          class="site-header__toggle"
+          popovertarget="site-nav"
+          aria-label="Menu"
+        >
+          <span aria-hidden="true">☰</span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+        <nav
+          id="site-nav"
+          class="site-nav"
+          popover
+          aria-label="Main navigation"
+        >
+          <a href="nothing.html" class="site-nav__link">Home</a>
+          <a href="nothing.html" class="site-nav__link">Shop</a>
+          <a href="nothing.html" class="site-nav__link">Guide</a>
+          <a href="nothing.html" class="site-nav__link">Contact</a>
+          <a href="nothing.html" class="site-nav__link site-nav__link--cta"
+            >Get Started</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <br />
+      <section id="hero" class="container" aria-labelledby="hero-title">
+        <header class="section-header stack">
+          <span class="section-header__eyebrow"
+            >Your one stop shop for all gardening needs</span
+          >
+          <h1 class="section-header__title">Georges Garden Center</h1>
+        </header>
+        <section class="carousel" aria-label="Example content carousel">
+          <div class="carousel__track" tabindex="0">
+            <article
+              class="carousel__slide grid items-center"
+              style="--col-count-lg: 2"
+            >
+              <figure class="carousel__media">
+                <img src="images/carousel1.jpg" alt="" loading="lazy" />
+              </figure>
+              <div class="carousel__copy stack">
+                <h2>Pristine Gardens</h2>
+                <blockquote>
+                  <p>
+                    Ensure your garden is the best on the street. Our grass
+                    fertilizer is the best way to make this happen.
+                  </p>
+                </blockquote>
+                <p class="carousel__attribution">
+                  <strong>Visit our shop</strong><br /><a href="shop.html"
+                    >click</a
+                  >
+                </p>
+              </div>
+            </article>
+            <article
+              class="carousel__slide grid items-center"
+              style="--col-count-lg: 2"
+            >
+              <figure class="carousel__media">
+                <img src="images/carousel2.jpg" alt="" loading="lazy" />
+              </figure>
+              <div class="carousel__copy stack">
+                <h2>Blossoming Flowers</h2>
+                <blockquote>
+                  <p>Make your garden pop this spring with beautiful flowers</p>
+                </blockquote>
+                <p class="carousel__attribution">
+                  <strong>Checkout our guide</strong><br /><a href="guide.html"
+                    >click</a
+                  >
+                </p>
+              </div>
+            </article>
+            <article
+              class="carousel__slide grid items-center"
+              style="--col-count-lg: 2"
+            >
+              <figure class="carousel__media">
+                <img src="images/carousel3.webp" alt="" loading="lazy" />
+              </figure>
+              <div class="carousel__copy stack">
+                <h2>Premium Tools</h2>
+                <blockquote>
+                  <p>
+                    Make your life easier with our premium, durable and quality
+                    tools.
+                  </p>
+                </blockquote>
+                <p class="carousel__attribution">
+                  <strong>Visit our shop</strong><br /><a href="shop.html"
+                    >click</a
+                  >
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+      <!-- End hero section -->
+
+      <section id="content" class="container section stack">
+        <header class="section-header stack">
+          <span class="section-header__eyebrow"
+            >Perfect for your next project</span
+          >
+          <h1 class="section-header__title">Featured Products</h1>
+          <p class="section-header__intro">
+            Top of the line products, designed to make your garden shine.
+          </p>
+        </header>
+        <ul class="media-gallery media-gallery--card">
+          <li class="media-gallery__item">
+            <a
+              href="#"
+              class="media-gallery__frame"
+              aria-label="Wireless Headphones"
+            >
+              <img
+                src="images/trowel.webp"
+                alt=""
+                class="media-gallery__image"
+              />
+              <span class="badge badge--deal media-gallery__tag">20% OFF</span>
+            </a>
+            <div class="media-gallery__body">
+              <h3 class="media-gallery__title">
+                <a href="#">Premium Trowel</a>
+              </h3>
+              <div
+                class="media-gallery__rating"
+                role="img"
+                aria-label="4.4 out of 5 stars, 312 reviews"
+              >
+                <span class="media-gallery__stars" aria-hidden="true"
+                  >★★★★☆</span
+                >
+                <span class="text-muted" aria-hidden="true">4.1 (332)</span>
+              </div>
+              <p class="media-gallery__price">
+                <span class="media-gallery__price-current">$20.99</span>
+                <span class="media-gallery__price-was">$40.99</span>
+              </p>
+              <button type="button" class="btn btn--primary media-gallery__cta">
+                Add to cart
+              </button>
+            </div>
+          </li>
+          <li class="media-gallery__item">
+            <a
+              href="#"
+              class="media-gallery__frame"
+              aria-label="Wireless Headphones"
+            >
+              <img
+                src="images/fertilizer.jpg"
+                alt=""
+                class="media-gallery__image"
+              />
+              <span class="badge badge--deal media-gallery__tag">40% OFF</span>
+            </a>
+            <div class="media-gallery__body">
+              <h3 class="media-gallery__title">
+                <a href="#">All Use Fertilizer</a>
+              </h3>
+              <div
+                class="media-gallery__rating"
+                role="img"
+                aria-label="4.4 out of 5 stars, 312 reviews"
+              >
+                <span class="media-gallery__stars" aria-hidden="true"
+                  >★★★★☆</span
+                >
+                <span class="text-muted" aria-hidden="true">4.3 (314)</span>
+              </div>
+              <p class="media-gallery__price">
+                <span class="media-gallery__price-current">$40.99</span>
+                <span class="media-gallery__price-was">$62.99</span>
+              </p>
+              <button type="button" class="btn btn--primary media-gallery__cta">
+                Add to cart
+              </button>
+            </div>
+          </li>
+          <li class="media-gallery__item">
+            <a
+              href="#"
+              class="media-gallery__frame"
+              aria-label="Wireless Headphones"
+            >
+              <img
+                src="images/gloves.webp"
+                alt=""
+                class="media-gallery__image"
+              />
+              <span class="badge badge--deal media-gallery__tag">28% OFF</span>
+            </a>
+            <div class="media-gallery__body">
+              <h3 class="media-gallery__title">
+                <a href="#">Protective Garden Gloves</a>
+              </h3>
+              <div
+                class="media-gallery__rating"
+                role="img"
+                aria-label="4.4 out of 5 stars, 312 reviews"
+              >
+                <span class="media-gallery__stars" aria-hidden="true"
+                  >★★★★☆</span
+                >
+                <span class="text-muted" aria-hidden="true">4.4 (312)</span>
+              </div>
+              <p class="media-gallery__price">
+                <span class="media-gallery__price-current">$39.99</span>
+                <span class="media-gallery__price-was">$69.99</span>
+              </p>
+              <button type="button" class="btn btn--primary media-gallery__cta">
+                Add to cart
+              </button>
+            </div>
+          </li>
+          <li class="media-gallery__item">
+            <a
+              href="#"
+              class="media-gallery__frame"
+              aria-label="Wireless Headphones"
+            >
+              <img
+                src="images/pruner.jpg"
+                alt=""
+                class="media-gallery__image"
+              />
+              <span class="badge badge--deal media-gallery__tag">28% OFF</span>
+            </a>
+            <div class="media-gallery__body">
+              <h3 class="media-gallery__title">
+                <a href="#">Premium Pruner</a>
+              </h3>
+              <div
+                class="media-gallery__rating"
+                role="img"
+                aria-label="4.4 out of 5 stars, 312 reviews"
+              >
+                <span class="media-gallery__stars" aria-hidden="true"
+                  >★★★★☆</span
+                >
+                <span class="text-muted" aria-hidden="true">3.9 (212)</span>
+              </div>
+              <p class="media-gallery__price">
+                <span class="media-gallery__price-current">$60.99</span>
+                <span class="media-gallery__price-was">$81.99</span>
+              </p>
+              <button type="button" class="btn btn--primary media-gallery__cta">
+                Add to cart
+              </button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="features" class="container section stack">
+        <header class="section-header stack">
+          <span class="section-header__eyebrow">Guide</span>
+          <h2 class="section-header__title">
+            Some simple, but effective tips to build your skills
+          </h2>
+        </header>
+
+        <ul class="auto-grid" style="--min: 16rem">
+          <li class="card stack">
+            <h3>No Fires</h3>
+            <p class="text-muted">
+              Don't set your garden on fire or it will burn and everything will
+              be gone.
+            </p>
+          </li>
+          <li class="card stack">
+            <h3>Always Water</h3>
+            <p class="text-muted">
+              Remember to water your plants when needed, or they will wilt, and
+              die.
+            </p>
+          </li>
+        </ul>
+        <br />
+        <h2 class="section-header__title">Quick Videos to help you learn</h2>
+
+        <ul class="auto-grid" style="--min: 16rem">
+          <li class="card stack">
+            <figure class="stack" style="--stack-space: var(--space-2)">
+              <div class="embed">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/3zNij-aGpVw&pp=ygUSaG93IHRvIHdlZWQgZ2FyZGVu"
+                  title="Weeding garden"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <figcaption class="embed-caption">
+                How to weed your garden
+              </figcaption>
+            </figure>
+          </li>
+          <li class="card stack">
+            <figure class="stack" style="--stack-space: var(--space-2)">
+              <div class="embed">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/kyIND6oDfrw&pp=ygUhIEhvdyB0byByZXBvdCBhIHJvb3QtYm91bmQgZmVybi4g"
+                  title="Repotting a root-bound fern"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <figcaption class="embed-caption">
+                How to repot a root-bound fern.
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container stack">
+        <h2 class="site-footer__title">Georges Garden Center</h2>
+        <nav class="site-footer__nav" aria-label="Footer navigation">
+          <a href="nothing.html">Home</a>
+          <a href="nothing.html">Shop</a>
+          <a href="nothing.html">Guide</a>
+          <a href="nothing.html">Contact</a>
+        </nav>
+        <p class="site-footer__copyright">
+          © 2026 Advanced UX Design Class. Daniel Peace
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
