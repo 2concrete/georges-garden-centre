@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>George's Garden Centre | Guide</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/core.css" />
+    <link rel="stylesheet" href="css/components/header-nav.css" />
+    <link rel="stylesheet" href="css/components/embed.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <header class="site-header drawer-right">
+      <div class="site-header__inner container">
+        <a class="site-header__brand" href="index.html">George's Garden</a
+        ><button
+          class="site-header__toggle"
+          type="button"
+          popovertarget="site-nav"
+          aria-label="Menu"
+        >
+          <span aria-hidden="true">☰</span
+          ><span class="visually-hidden">Menu</span>
+        </button>
+        <nav
+          id="site-nav"
+          class="site-nav"
+          popover
+          aria-label="Main navigation"
+        >
+          <a class="site-nav__link" href="index.html">Home</a
+          ><a class="site-nav__link" href="shop.html">Shop</a
+          ><a class="site-nav__link" href="guide.html">Guide</a
+          ><a class="site-nav__link" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="container section stack">
+        <header class="section-header stack">
+          <span class="section-header__eyebrow">Start here</span>
+          <h1 class="section-header__title">A small gardening guide</h1>
+          <p class="section-header__intro">
+            Six steps for getting something to grow.
+          </p>
+        </header>
+        <ul class="auto-grid" style="--min: 13rem">
+          <li class="card stack">
+            <h2 class="card__title">1. Pick a spot</h2>
+            <p class="text-muted">
+              Find sun, water and enough room to move around.
+            </p>
+          </li>
+          <li class="card stack">
+            <h2 class="card__title">2. Start small</h2>
+            <p class="text-muted">
+              A few pots are easier than a whole backyard.
+            </p>
+          </li>
+          <li class="card stack">
+            <h2 class="card__title">3. Prep soil</h2>
+            <p class="text-muted">Loosen it and add compost before planting.</p>
+          </li>
+          <li class="card stack">
+            <h2 class="card__title">4. Pick easy plants</h2>
+            <p class="text-muted">Herbs, lettuce and radishes are forgiving.</p>
+          </li>
+          <li class="card stack">
+            <h2 class="card__title">5. Water</h2>
+            <p class="text-muted">
+              Water deeply whenever the surface feels dry.
+            </p>
+          </li>
+          <li class="card stack">
+            <h2 class="card__title">6. Keep checking</h2>
+            <p class="text-muted">
+              A few minutes each day prevents most problems.
+            </p>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container stack">
+        <h2 class="site-footer__title">George's Garden Centre</h2>
+        <nav class="site-footer__nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a><a href="shop.html">Shop</a
+          ><a href="guide.html">Guide</a><a href="contact.html">Contact</a>
+        </nav>
+        <p class="site-footer__copyright">Prototype site, 2026</p>
+      </div>
+    </footer>
+  </body>
+</html>

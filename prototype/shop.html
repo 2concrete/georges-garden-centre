@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>George's Garden Centre | Shop</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/core.css" />
+    <link rel="stylesheet" href="css/components/header-nav.css" />
+    <link rel="stylesheet" href="css/components/badge.css" />
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    <link rel="stylesheet" href="css/components/gallery-card-addon.css" />
+    <link rel="stylesheet" href="css/components/gallery-product-addon.css" />
+    <link rel="stylesheet" href="css/components/gallery.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <header class="site-header drawer-right">
+      <div class="site-header__inner container">
+        <a class="site-header__brand" href="index.html">George's Garden</a>
+        <button
+          class="site-header__toggle"
+          type="button"
+          popovertarget="site-nav"
+          aria-label="Menu"
+        >
+          <span aria-hidden="true">☰</span
+          ><span class="visually-hidden">Menu</span>
+        </button>
+        <nav
+          id="site-nav"
+          class="site-nav"
+          popover
+          aria-label="Main navigation"
+        >
+          <a class="site-nav__link" href="index.html">Home</a
+          ><a class="site-nav__link" href="shop.html">Shop</a
+          ><a class="site-nav__link" href="guide.html">Guide</a
+          ><a class="site-nav__link" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="container section stack">
+        <header class="section-header stack">
+          <span class="section-header__eyebrow">Not too many choices</span>
+          <h1 class="section-header__title">Shop garden basics</h1>
+          <p class="section-header__intro">
+            The things you probably came here for.
+          </p>
+        </header>
+        <ul class="media-gallery media-gallery--card" style="--col-count-lg: 4">
+          <li class="media-gallery__item">
+            <a class="media-gallery__frame" href="#"
+              ><img
+                class="media-gallery__image"
+                src="../images/trowel.webp"
+                alt="Garden trowel"
+              /><span class="badge badge--deal media-gallery__tag"
+                >20% OFF</span
+              ></a
+            >
+            <div class="media-gallery__body">
+              <h2 class="media-gallery__title">
+                <a href="#">Premium Trowel</a>
+              </h2>
+              <p class="media-gallery__price">
+                <span class="media-gallery__price-current">$20.99</span
+                ><span class="media-gallery__price-was">$40.99</span>
+              </p>
+              <button class="btn btn--primary media-gallery__cta" type="button">
+                Add to cart
+              </button>
+            </div>
+          </li>
+          <li class="media-gallery__item">
+            <a class="media-gallery__frame" href="#"
+              ><img
+                class="media-gallery__image"
+                src="../images/fertilizer.webp"
+                alt="Fertilizer"
+              /><span class="badge badge--deal media-gallery__tag"
+                >40% OFF</span
+              ></a
+            >
+            <div class="media-gallery__body">
+              <h2 class="media-gallery__title">
+                <a href="#">All Use Fertilizer</a>
+              </h2>
+              <p class="media-gallery__price">
+                <span class="media-gallery__price-current">$40.99</span
+                ><span class="media-gallery__price-was">$62.99</span>
+              </p>
+              <button class="btn btn--primary media-gallery__cta" type="button">
+                Add to cart
+              </button>
+            </div>
+          </li>
+          <li class="media-gallery__item">
+            <a class="media-gallery__frame" href="#"
+              ><img
+                class="media-gallery__image"
+                src="../images/gloves.webp"
+                alt="Garden gloves"
+            /></a>
+            <div class="media-gallery__body">
+              <h2 class="media-gallery__title">
+                <a href="#">Garden Gloves</a>
+              </h2>
+              <p class="media-gallery__price">
+                <span class="media-gallery__price-current">$39.99</span>
+              </p>
+              <button class="btn btn--primary media-gallery__cta" type="button">
+                Add to cart
+              </button>
+            </div>
+          </li>
+          <li class="media-gallery__item">
+            <a class="media-gallery__frame" href="#"
+              ><img
+                class="media-gallery__image"
+                src="../images/pruner.webp"
+                alt="Garden pruner"
+            /></a>
+            <div class="media-gallery__body">
+              <h2 class="media-gallery__title">
+                <a href="#">Premium Pruner</a>
+              </h2>
+              <p class="media-gallery__price">
+                <span class="media-gallery__price-current">$60.99</span>
+              </p>
+              <button class="btn btn--primary media-gallery__cta" type="button">
+                Add to cart
+              </button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container stack">
+        <h2 class="site-footer__title">George's Garden Centre</h2>
+        <nav class="site-footer__nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a><a href="shop.html">Shop</a
+          ><a href="guide.html">Guide</a><a href="contact.html">Contact</a>
+        </nav>
+        <p class="site-footer__copyright">Prototype site, 2026</p>
+      </div>
+    </footer>
+  </body>
+</html>

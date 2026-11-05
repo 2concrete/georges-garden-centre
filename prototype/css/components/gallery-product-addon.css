@@ -1,0 +1,99 @@
+/*
+  gallery-product-addon.css
+  ---------------------------------------------------------------------
+  Adds the two things that make an image card a PRODUCT card: a price
+  and a star rating. Everything else a product tile needs - the hover
+  lift, the tag anchor, the body, the linked title, the full-width CTA
+  - is generic image-card behaviour and lives in
+  gallery-card-addon.css, which this file stacks on top of.
+
+  If you are adding a new kind of tile (an event, a recipe, a staff
+  profile), require gallery.css + gallery-card-addon.css and add only
+  what is genuinely specific to it. Do not require this file unless
+  you actually want prices and star ratings.
+
+  Requires: css/reset.css, css/core.css, css/components/gallery.css,
+  css/components/gallery-card-addon.css
+  Pairs well with: badge.css (sale/new tags), result-card.css (cart
+  line items reuse it as-is - see cart.html), dialog.css (a quick-view
+  modal), core.css's .auto-grid (the product listing itself).
+
+  HTML STRUCTURE:
+    <ul class="media-gallery media-gallery--card">
+      <li class="media-gallery__item">
+        <a href="#" class="media-gallery__frame">
+          <img src="..." alt="..." class="media-gallery__image" />
+          <span class="badge badge--accent media-gallery__tag">Sale</span>
+        </a>
+        <div class="media-gallery__body">
+          <h3 class="media-gallery__title"><a href="#">Product name</a></h3>
+          <div class="media-gallery__rating" role="img" aria-label="4.4 out of 5 stars, 22 reviews">
+            <span class="media-gallery__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            <span class="text-muted" aria-hidden="true">4.4 (22)</span>
+          </div>
+          <p class="media-gallery__price">
+            <span class="media-gallery__price-current">$49.99</span>
+            <span class="media-gallery__price-was">$69.99</span>
+          </p>
+          <button type="button" class="btn btn--primary media-gallery__cta">
+            Add to cart
+          </button>
+        </div>
+      </li>
+    </ul>
+
+  .media-gallery__rating is optional - omit it for a tile with no reviews yet.
+  Use badge--deal (badge.css) instead of badge--accent for a louder
+  percentage-off callout, e.g. <span class="badge badge--deal
+  media-gallery__tag">25% OFF</span>.
+  ---------------------------------------------------------------------
+*/
+
+@layer components {
+
+  /* Star rating - the stars are decorative (aria-hidden); the wrapper
+     carries the real accessible text via aria-label so a screen reader
+     announces one clear sentence instead of five separate "star"
+     glyphs and a floating number. */
+  .media-gallery__rating {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 0.9rem;
+  }
+
+  .media-gallery__stars {
+    color: var(--color-warning);
+    letter-spacing: 1px;
+  }
+
+  /* margin-block-start: auto pushes price + CTA to the bottom of the
+     card even when titles vary in length across a grid row. */
+  .media-gallery__price {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    margin-block-start: auto;
+  }
+
+  .media-gallery__price-current {
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  .media-gallery__price-was {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    text-decoration: line-through;
+  }
+
+  /* Large price - for a product detail page rather than a grid tile. */
+  .media-gallery__price--lg .media-gallery__price-current {
+    font-size: 1.75rem;
+  }
+
+  .media-gallery__price--lg .media-gallery__price-was {
+    font-size: 1rem;
+  }
+
+} /* end @layer components */

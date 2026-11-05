@@ -1,0 +1,125 @@
+/*
+  form.css
+  ---------------------------------------------------------------------
+  Base form primitives: a labeled .form__field wrapping a .form__input,
+  .form__select or .form__textarea, plus .form__help hint text and a
+  .form__error message. Native :user-invalid and script-set
+  [aria-invalid="true"] share one invalid style, so browser-native and
+  JS-driven validation look identical. See form-extended.css for
+  checkboxes, radios, toggles, fieldsets, specialised inputs, and the
+  multi-step stepper.
+
+  Requires: css/reset.css, css/core.css
+
+  HTML STRUCTURE:
+    <form class="form stack">
+      <div class="form__field stack">
+        <label class="form__label" for="name">Full name</label>
+        <input class="form__input" type="text" id="name" name="name">
+      </div>
+    </form>
+  ---------------------------------------------------------------------
+*/
+
+@layer components {
+  .form {
+    --stack-space: var(--space-6);
+  }
+
+  .form__field {
+    --stack-space: var(--space-2);
+    /* See the comment on .result-card__actions in result-card.css -
+       the same grid/flex-item auto-min-width floor applies here
+       whenever a .form__field with an explicit width sits inside a
+       flex or grid container (e.g. a quantity field next to a button). */
+    min-width: 0;
+  }
+
+  /* A narrow field for a small numeric value, e.g. a cart/product
+     quantity - width is a hard cap (max-width) so a number input's
+     own intrinsic sizing can never push it wider than intended. */
+  .form__field--qty {
+    width: 5rem;
+    max-width: 5rem;
+  }
+
+  .form__label {
+    display: inline-block;
+    font-weight: 600;
+  }
+
+  .form__help {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+  }
+
+  .form__input,
+  .form__select,
+  .form__textarea {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    color: var(--color-text);
+    padding: 0.75rem var(--space-4);
+    transition:
+      border-color var(--transition-fast),
+      box-shadow var(--transition-fast),
+      background-color var(--transition-fast);
+  }
+
+  .form__input::placeholder,
+  .form__textarea::placeholder {
+    color: var(--color-muted);
+  }
+
+  .form__input:focus-visible,
+  .form__select:focus-visible,
+  .form__textarea:focus-visible {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-accent) 30%, transparent);
+    outline: none;
+  }
+
+  /*
+    Native validation state - zero JS. A plain <input type="email"
+    required> gets this automatically from the browser's own
+    constraint validation, once the user has actually interacted with
+    the field (unlike :invalid, which matches an empty required field
+    from page load, before the user has done anything).
+
+    [aria-invalid="true"] covers validation the browser can't know
+    about on its own (a server rejecting a username, JS comparing two
+    fields) - same visual treatment, whichever decided it's invalid.
+    .form__field--invalid (see form-extended.css) still exists
+    alongside this for cases that need a wrapper-level state, e.g.
+    pairing the border colour with a message below the field.
+  */
+  .form__input:user-invalid,
+  .form__select:user-invalid,
+  .form__textarea:user-invalid,
+  .form__input[aria-invalid="true"],
+  .form__select[aria-invalid="true"],
+  .form__textarea[aria-invalid="true"] {
+    border-color: var(--color-error);
+  }
+
+  .form__textarea {
+    min-height: var(--textarea-min-height, 10rem);
+    resize: vertical;
+  }
+
+  /* Overrides the shared width: 100% above for a <select> that should
+     size to its content instead of filling the container - e.g. a
+     sort-order dropdown sitting next to a result count. */
+  .form__select {
+    width: var(--select-width, 100%);
+  }
+
+  .form__error {
+    color: var(--color-error);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
